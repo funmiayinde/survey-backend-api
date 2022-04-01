@@ -9,11 +9,6 @@ export default {
         invalid_id: 'Invalid Object Id',
         invalid_survey: 'Survey response must be an array',
     },
-
-    file: {
-        file_uploaded: 'File successfully uploaded',
-        no_file_uploaded: 'No file was uploaded',
-    },
     surveys: {
         created: 'Survey successfully created',
         updated: 'Survey successfully updated',

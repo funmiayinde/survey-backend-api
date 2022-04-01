@@ -40,7 +40,6 @@ class SurveyProcessor {
   async findByName(name: string): Promise<any> {
     // if real time model
     // return await this._model.find({name});
-    console.log('findByName-survey:::', surveys);
     return surveys.find((s: Survey) => s.name === name);
   }
 
@@ -80,7 +79,6 @@ class SurveyProcessor {
       })),
     };
     surveys.push(survey);
-    console.log('create-survey:::', surveys);
     surveyResult[String(survey.id)] = {
       ...survey,
       stats: {
@@ -96,7 +94,6 @@ class SurveyProcessor {
         },
       },
     };
-    console.log('result:::', JSON.stringify(surveyResult));
     return survey;
   }
 
@@ -114,17 +111,8 @@ class SurveyProcessor {
     if (!ObjectId.isValid(surveyId) && !ObjectId.isValid(optionId)) {
       throw new AppError(lang.get('error').invalid_id, BAD_REQUEST);
     }
-    console.log('surveyId:::', String(surveyId));
-    console.log('optionId:::', String(optionId));
     surveyResult[String(surveyId)].stats.hits++;
     surveyResult[String(surveyId)].stats.options[String(optionId)].hits++;
-    console.log('result', surveyResult[String(surveyId)]);
-    console.log(
-      'single-result',
-      JSON.stringify(
-        surveyResult[String(surveyId)].stats.options[String(optionId)],
-      ),
-    );
     return surveyResult[surveyId];
   }
 
