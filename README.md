@@ -39,4 +39,5 @@ npm run dev
 
 ### API Documentation Link
 - [view the api documentation] 
-- https://www.getpostman.com/collections/19c8d5b88154c2d88105
+- POST-MAN Collection https://www.getpostman.com/collections/19c8d5b88154c2d88105
+- POSTMAN documentation https://documenter.getpostman.com/view/255172/UVyrUc7a
