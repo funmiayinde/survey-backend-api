@@ -33,7 +33,6 @@ npm run dev
 - Start the application with `npm run dev`
 - Run unit test `npm test`
 - Build the application with `npm run build`
-- You can seed with `{BASE_URL}/seeds/setups` 
 
 ### Testing
 - Run Test with `npm test` command
