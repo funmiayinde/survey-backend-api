@@ -20,7 +20,6 @@ describe('Setup For Survey Test', () => {
                 .set('x-api-key', process.env.API_KEY || 'SurveyAPIKey')
                 .expect('Content-type', 'application/json; charset=utf-8')
                 .expect(CREATED);
-            // console.log('response::', response.body);
             responseObj = response.body.data;
             expect(response).instanceof(Object);
             expect(response.body).instanceof(Object);
@@ -45,7 +44,6 @@ describe('Setup For Survey Test', () => {
         });
         
         it('Should test submit survey', async () => {
-            console.log('responseObj::', responseObj);
             const response = await server.post(`${TEST_SURVEY_URL}/submit`)
                 .send([{ surveyId: responseObj.id, optionId: responseObj.options[0].id }])
                 .set('x-api-key', process.env.API_KEY || 'SurveyAPIKey')
@@ -59,7 +57,6 @@ describe('Setup For Survey Test', () => {
         });
         
         it('Should test survey result', async () => {
-            console.log('responseObj::', responseObj);
             const response = await server.get(`${TEST_SURVEY_URL}/${responseObj.id}/result`)
                 .set('x-api-key', process.env.API_KEY || 'SurveyAPIKey')
                 .expect(OK);
