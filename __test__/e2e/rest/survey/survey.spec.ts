@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import supertest, { SuperTest } from 'supertest';
 import app from '../../../../src/app';
 import {  CREATED, OK } from '../../../../src/utils/codes';
